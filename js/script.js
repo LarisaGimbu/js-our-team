@@ -39,11 +39,17 @@ const team = [
 const teamContainer = document.querySelector('.team-container');
 teamContainer.innerHTML = '';
 
+const teamCard = '';
+
+
+//creiamo una card per ogni object del team
 for(let index in team){
 
   const teamCard = document.createElement('div');
   teamCard.className = 'team-card';
   teamContainer.append(teamCard);
+
+  
 
   teamCard.innerHTML = 
   `
@@ -55,4 +61,45 @@ for(let index in team){
       <p>${team[index].role}</p>
     </div>
   `;
+
+  
+  
 }
+
+//al click del button creare una nuova card
+
+const addMemberButton = document.getElementById('addMemberButton');
+
+let newName = document.getElementById('name').value;
+let newRole = document.getElementById('role').value;
+let newImage = document.getElementById('image').value;
+
+
+const addMemberFunction = addMember(teamCard);
+
+
+
+
+function addMember(teamCard){
+  addMemberButton.addEventListener('click', function(){
+ 
+ 
+    console.log('ho cliccato');
+    const teamCard = document.createElement('div');
+    teamCard.className = 'team-card';
+    teamContainer.append(teamCard);
+   
+   
+    teamCard.innerHTML= 
+    `
+      <div class="card-image">
+        <img src="img/${newImage} " alt="${newName} " />
+      </div>
+      <div class="card-text">
+        <h3>${newName} </h3>
+        <p>${newRole}</p>
+      </div>
+    `;
+  })
+}
+
