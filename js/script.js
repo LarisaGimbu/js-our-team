@@ -70,9 +70,6 @@ for(let index in team){
 
 const addMemberButton = document.getElementById('addMemberButton');
 
-let newName = document.getElementById('name').value;
-let newRole = document.getElementById('role').value;
-let newImage = document.getElementById('image').value;
 
 
 const addMemberFunction = addMember(teamCard);
@@ -82,6 +79,10 @@ const addMemberFunction = addMember(teamCard);
 
 function addMember(teamCard){
   addMemberButton.addEventListener('click', function(){
+    let newName = document.getElementById('name').value;
+    let newRole = document.getElementById('role').value;
+    let newImage = document.getElementById('image').value;
+
  
  
     console.log('ho cliccato');
